@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1_4object</title>
+</head>
+<body>
+<canvas id="canvasid" width="300" height="100"
+        style="border:1px solid magenta">
+</canvas>
+<div id="result"></div>
+<script>
+    var canvas = document.getElementById("canvasid");
+    var ctx = canvas.getContext("2d");
+    ctx.lineWidth = 5;
+    function square(obj)
+    {
+        ctx.strokeStyle = obj.color;
+        ctx.strokeRect(obj.x ,10,obj.side ,obj.side);
+        ctx.stroke();
+    }
+    var s =
+        {
+            side:15,
+            x:10,
+            color:'red'
+        };
+    square(s);
+    //еще способы создания обьекта
+    square({side:25,x:50,color:'green'});
+    square({"side":35,"x":110,"color":'blue'});
+    square(Object.create({side:45,x:180,color:'brown'}));
+</script>
+</body>
+</html>
