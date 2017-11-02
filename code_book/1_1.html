@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style_index.css">
+    <title>Title</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        .conva
+        {
+            margin: 0 auto;
+        }
+        #canvasid
+        {
+            width: 300px;
+            height: 100px;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="conva">
+    <canvas id="canvasid" >
+
+    </canvas>
+</div>
+<script>
+    //обращение к canvas
+    var canvas = document.getElementById("canvasid");
+    var ctx = canvas.getContext("2d");
+    for(var i = 0 ;i < 10;i++){
+        ctx.fillRect(i*50,0,1,canvas.height);
+    }
+    for(var j = 0;j < 10;j++)
+    {
+        ctx.fillRect(0,j*50,canvas.width,1);
+    }
+
+    ctx.moveTo(75,75);//перемещение курсора
+    ctx.lineTo(100,100);//создание линии
+    ctx.stroke();//отображение линии
+    ctx.moveTo(75,75);
+    ctx.lineTo(100,75);//создание линии
+    ctx.stroke();//отображение линии
+</script>
+
+
+</body>
+</html>

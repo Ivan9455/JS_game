@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1_3a</title>
+</head>
+<body>
+<canvas id="canvasid" width="300" height="100"
+        style="border:1px solid magenta">
+</canvas>
+<div id="result"></div>
+<script>
+    var canvas = document.getElementById("canvasid");
+    var ctx = canvas.getContext("2d");
+    ctx.strokeText("Зигзаг",10,10);
+    ctx.stroke();
+    ctx.lineWidth = 10;
+    ctx.strokeStyle = "#0000ff";
+    var x = [40,70,100,130,160,190];
+    var y = 80;
+    ctx.moveTo(10,80);
+    ctx.beginPath();
+    for(var i = 0; i < x.length ;i++)
+    {
+        if(y>40) y =40;else y= 80;
+        ctx.lineTo(x[i],y);
+    }
+    ctx.stroke();
+</script>
+</body>
+</html>
