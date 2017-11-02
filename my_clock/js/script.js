@@ -68,8 +68,6 @@ function clock() {
     }
 
     function clock_h(h,x) {
-        //x = 0;//minutes
-        //h = 3;//hours
         h = (h>=12)?h-12:h;
         if((h>=0&&h<=1)||(h==11))
         {
