@@ -12,6 +12,15 @@
 <script>
     var canvas = document.getElementById("canvasid");
     var ctx = canvas.getContext("2d");
+    ctx.lineWidth = 5;
+    function square(side,x,color) {
+        ctx.strokeRect(x,10,side,side);
+        ctx.stroke();
+    }
+    square(15,10,'red');
+    square(25,50,'green');
+    square(35,110,'blue');
+    square(45,180,'brown');
 </script>
 </body>
 </html>
