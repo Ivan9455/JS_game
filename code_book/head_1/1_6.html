@@ -15,7 +15,7 @@
     var image = new Image();
     image.onload = function () {
         ctx.save();
-        ctx.translate(40,-10);
+        ctx.translate(40,50);
         ctx.rotate(30*Math.PI/180);
         ctx.scale(0.3,0.3);
         ctx.drawImage(image,0,0);
@@ -27,6 +27,7 @@
         ctx.restore();
     };
     image.src = 'https://a.d-cd.net/f01baf8s-100.jpg';
+
 </script>
 </body>
 </html>

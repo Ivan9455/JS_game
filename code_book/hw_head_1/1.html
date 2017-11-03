@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+</head>
+<body>
+<canvas id="canvasid" style="border:2px dotted black">
+</canvas>
+<script>
+    var canvas = document.getElementById("canvasid");
+    var ctx = canvas.getContext("2d");
+    canvas.width = 200;
+    canvas.height = 200;
+    var image = {
+        home:function(){
+
+            ctx.fillStyle = "red";
+            ctx.rect(40,120,120,70);
+
+        },
+        roof:function(){
+            ctx.moveTo(100,50);
+            ctx.lineTo(40,120);
+            ctx.lineTo(160,120);
+            ctx.lineTo(100,50);
+        },
+        window:function(){
+            //ctx.fillStyle = "blue";
+            ctx.rect(50,130,30,30);
+        },
+        door:function () {
+            ctx.rect(100,130,30,60);
+        }
+    };
+
+    image.home();
+    image.roof();
+    image.window();
+    image.door();
+    ctx.fill();
+    ctx.stroke();
+
+
+
+    //ctx.stroke();
+
+
+
+
+</script>
+</body>
+</html>
