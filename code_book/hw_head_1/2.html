@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+</head>
+<body>
+<canvas id="canvasid" style="border:2px dotted black">
+</canvas>
+<script>
+    var canvas = document.getElementById("canvasid");
+    var ctx = canvas.getContext("2d");
+    canvas.width =500;
+    canvas.height =500;
+    var image = new Image();
+    image.onload = function () {
+        ctx.save();
+        ctx.translate(10,10);
+        ctx.drawImage(image,0,0);
+        ctx.restore();
+
+        ctx.save();
+        ctx.translate(120,50);
+        ctx.scale(0.5,0.5);
+        ctx.drawImage(image,0,0);
+        ctx.restore();
+
+        ctx.save();
+        ctx.translate(10,120);
+        ctx.scale(2,2);
+        ctx.drawImage(image,0,0);
+        ctx.restore();
+    };
+
+    image.src = 'https://a.d-cd.net/f01baf8s-100.jpg';
+</script>
+</body>
+</html>
