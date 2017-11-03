@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform image</title>
+</head>
+<body>
+<canvas id="canvasid" width="300" height="100"
+        style="border:1px solid magenta">
+</canvas>
+
+<script>
+    var canvas = document.getElementById("canvasid");
+    var ctx = canvas.getContext("2d");
+    var image = new Image();
+    image.onload = function () {
+        ctx.save();
+        ctx.translate(40,-10);
+        ctx.rotate(30*Math.PI/180);
+        ctx.scale(0.3,0.3);
+        ctx.drawImage(image,0,0);
+        ctx.restore();
+        ctx.rotate(-30*Math.PI/180);
+        ctx.translate(100,100);
+        ctx.scale(0.4,0.4);
+        ctx.drawImage(image,0,0);
+        ctx.restore();
+    };
+    image.src = 'https://a.d-cd.net/f01baf8s-100.jpg';
+</script>
+</body>
+</html>
