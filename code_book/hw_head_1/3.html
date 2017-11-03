@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3</title>
+</head>
+<body>
+<canvas id="canvasid" style="border:2px dotted black">
+</canvas>
+<script>
+    var canvas = document.getElementById("canvasid");
+    var ctx = canvas.getContext("2d");
+    canvas.width = 300;
+    canvas.height = 100;
+
+    var image = new Image();
+    image.onload = function () {
+        ctx.drawImage(image,10,10,80,80);
+        setInterval(move,50);
+    };
+    image.src = "https://a.d-cd.net/f01baf8s-100.jpg";
+    var x = -100;
+    var z = 0
+    function move() {
+        if(x<300&&z!=1) x+= 5;else z =1;
+        if(x>-100&&z==1)x-=5;else z =0;
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.drawImage(image,x,10,80,80);
+    }
+</script>
+</body>
+</html>
