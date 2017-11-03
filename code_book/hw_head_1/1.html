@@ -12,23 +12,20 @@
     var ctx = canvas.getContext("2d");
     canvas.width = 200;
     canvas.height = 200;
-    var image = {
-        home:function(){
+    var home = {
+        start:function () {
+            ctx.fillStyle = "black";
+            ctx.moveTo(100,50);
+            ctx.lineTo(40,120);
+            ctx.lineTo(100,50);
+            ctx.save();
+        },
+
+        homem:function(){
 
             ctx.fillStyle = "red";
             ctx.fillRect(40,120,120,70);
             ctx.save();
-        },
-        roof:function(){
-            ctx.restore();
-            ctx.beginPath();
-            ctx.fillStyle = "green";
-            ctx.moveTo(100,50);
-            ctx.lineTo(40,120);
-            ctx.lineTo(160,120);
-            ctx.lineTo(100,50);
-            ctx.closePath();
-
         },
         window:function(){
             ctx.fillStyle = "blue";
@@ -36,16 +33,28 @@
             ctx.save();
         },
         door:function () {
-            ctx.fillStyle = "yellow";
+            ctx.fillStyle = "green";
             ctx.fillRect(100,130,30,60);
             ctx.save();
+        },
+        roof:function(){
+            ctx.fillStyle = "yellow";
+            ctx.moveTo(100,50);
+            ctx.lineTo(40,120);
+            ctx.lineTo(160,120);
+            ctx.lineTo(100,50);
+            ctx.save();
         }
+
     };
 
-    image.home();
-    image.roof();
-    image.window();
-    image.door();
+
+    home.homem();
+    home.window();
+    home.door();
+    home.roof();
+
+
     ctx.fill();
     ctx.stroke();
 
