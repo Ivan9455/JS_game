@@ -16,21 +16,29 @@
         home:function(){
 
             ctx.fillStyle = "red";
-            ctx.rect(40,120,120,70);
-
+            ctx.fillRect(40,120,120,70);
+            ctx.save();
         },
         roof:function(){
+            ctx.restore();
+            ctx.beginPath();
+            ctx.fillStyle = "green";
             ctx.moveTo(100,50);
             ctx.lineTo(40,120);
             ctx.lineTo(160,120);
             ctx.lineTo(100,50);
+            ctx.closePath();
+
         },
         window:function(){
-            //ctx.fillStyle = "blue";
-            ctx.rect(50,130,30,30);
+            ctx.fillStyle = "blue";
+            ctx.fillRect(50,130,30,30);
+            ctx.save();
         },
         door:function () {
-            ctx.rect(100,130,30,60);
+            ctx.fillStyle = "yellow";
+            ctx.fillRect(100,130,30,60);
+            ctx.save();
         }
     };
 
